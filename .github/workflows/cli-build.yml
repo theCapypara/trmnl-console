@@ -60,7 +60,7 @@ jobs:
           # autodetection fails
           CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER: aarch64-linux-gnu-gcc
       # -- Artifact upload
-      - uses: actions/upload-artifact@v5  # todo: switch to v7 before commit
+      - uses: actions/upload-artifact@v7  # todo: switch to v7 before commit
         with:
           path: cli-client/target/${{ matrix.target }}/release/trmnl-console${{ env.EXE_SUFFIX }}
           name: trmnl-console-${{ env.PACKAGE_VERSION }}-${{ env.COMMIT_SHORT_SHA }}-${{ matrix.target }}${{ env.EXE_SUFFIX }}
