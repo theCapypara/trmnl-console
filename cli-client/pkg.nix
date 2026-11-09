@@ -1,5 +1,7 @@
 {
+  pkg-config,
   cacert,
+  aws-lc,
   fetchFromGitHub,
   python314Packages,
   lib,
@@ -37,6 +39,14 @@ rustPlatform.buildRustPackage (finalAttrs: {
   cargoLock = {
     lockFile = ./Cargo.lock;
   };
+
+  nativeBuildInputs = [
+    pkg-config
+  ];
+
+  buildInputs = [
+    aws-lc
+  ];
 
   preCheck = ''
     export SSL_CERT_FILE=${cacert}/etc/ssl/certs/ca-bundle.crt
